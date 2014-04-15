@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="day.css">
+</head>
+<body>
+
+<h1>Day 4 Tutorial</h1>
+
+<button>Day</button>
+<button>Night</button>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<script>
+		// (function() {
+		// 	$('button').click(function(){
+		// 		console.log("button was clicked");
+		// 	});
+		// })();// uses a self envoked anonymous function so you don't have to use global variables. on click console log button was clicked.
+		
+		// (function() {
+		// 	$('button').click(function(){
+		// 		console.log(this);//will show the button clicked
+		// 	});
+		// })();
+
+		// (function() {
+		// 	$('button').hover(function(){
+		// 		console.log(this);//will show the button hovered
+		// 	});
+		// })();
+		
+		// (function() {
+		// 	$('button').click(function(){
+		// 		console.log($(this));//will show the button clicked but (this) is wrapped in the jquery so we can use jquery methods.
+		// 	});
+		// })();
+		
+		(function() {
+			$('button').click(function(){
+				$(this).text('changed');
+				});
+		})();
+
+	</script>
+
+</body>
+</html>
