@@ -1,3 +1,5 @@
+<!-- This is Jquery using events -->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,11 +9,13 @@
 </head>
 <body>
 
-<h1>Day 4 Tutorial</h1>
+	<h1>Day 4 Tutorial</h1>
 
-<button>Day</button>
-<button>Night</button>
-
+	<div>
+		<button data-file= 'day'>Day</button>
+		<button data-file= 'night'>Night</button>
+		<button data-file= 'afternoon'>Afternoon</button>
+	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -21,7 +25,7 @@
 		// 		console.log("button was clicked");
 		// 	});
 		// })();// uses a self envoked anonymous function so you don't have to use global variables. on click console log button was clicked.
-		
+
 		// (function() {
 		// 	$('button').click(function(){
 		// 		console.log(this);//will show the button clicked
@@ -33,20 +37,100 @@
 		// 		console.log(this);//will show the button hovered
 		// 	});
 		// })();
-		
+
 		// (function() {
 		// 	$('button').click(function(){
 		// 		console.log($(this));//will show the button clicked but (this) is wrapped in the jquery so we can use jquery methods.
 		// 	});
 		// })();
-		
-		(function() {
-			$('button').click(function(){
-				$(this).text('changed');
-				});
-		})();
 
-	</script>
+		// (function() {
+		// 	$('button').click(function(){
+		// 		$(this).text('changed');
+		// 		});
+		// })();
+
+		// (function() {
+		// 	$('button').click(function(){
+		// 		$('link').attr('href', 'night.css');
+		// 	});
+		// })();// on click change link attribute href to night.css
+
+		// (function() {
+		// 	$('button').click(function(){//on click
+		// 		var stylesheet = $(this).text().toLowerCase();//get text of clicked which would be "this" then make it into lowercase and put it into a variable for reference
+		// 		console.log(stylesheet);
+		// 		$('link').attr('href', stylesheet + '.css');// change link to stylesheet variable .css
+		// 	});
+		// })();// on click change the link .css by the name of the button text (day, night).
+
+		// (function() {
+		// 	$('button').click(function(){//on click
+		// 		var stylesheet = $(this).attr('data-file');
+		// 		console.log(stylesheet);
+		// 		$('link').attr('href', stylesheet + '.css');// 
+		// 	});
+		// })(); //same thing as above but using data-file and using attr.
+
+		// (function() {
+		// 	$('button').click(function(){
+		// 		var stylesheet = $(this).data('file');
+		// 		console.log(stylesheet);
+		// 		$('link').attr('href', stylesheet + '.css');// 
+		// 	});
+		// })();//same thing as above but using jquery data method.
+
+		// (function() {
+		// 	$('button').click(function(){
+		// 		var link = $('link');
+		// 		var stylesheet = $(this).data('file');
+		// 		console.log(stylesheet);
+		// 		link.attr('href', stylesheet + '.css');
+		// 	});// instead of diving into the DOM many times we create a variable that calls the jquery "link" function object.
+		// })();
+
+
+		// (function() {
+		// 	$('button').click(function(){
+		// 		var $this = $(this);
+		// 		var link = $('link');
+		// 		var stylesheet = $this.data('file');
+		// 		console.log(stylesheet);
+		// 		link.attr('href', stylesheet + '.css');
+		// 		$this.attr('disabled', 'disabled');
+		// 	});// created a jquery "this" function variable then used it to then we use this.attr to disable it.
+		// })();
+
+// (function() {
+// 	$('button').click(function(){
+// 		var $this = $(this);
+// 		var link = $('link');
+// 		var stylesheet = $this.data('file');
+
+// 		$(this).siblings('button').removeAttr('disabled');//siblings refers to everything inside of the same level. So if there are two buttons inside of the div element it will choose the disabled attribute and remove it. this is a way to toggle the buttons.
+
+// 		link.attr('href', stylesheet + '.css');
+// 		$this.attr('disabled', 'disabled');
+// 			});// created a jquery "this" function variable then used it to then we use this.attr to disable it.
+// })();
+
+(function() {
+	$('button').on('click', function(){// change so more readible when click is on do this function. You can use hover also and other helpers.
+		var $this = $(this),
+		link = $('link'),
+			stylesheet = $this.data('file');// changed the var to one var that way we don't repeat ourselves. Make sure to put commas.
+
+			link.attr('href', stylesheet + '.css');
+
+			$(this)
+				.siblings('button')// get the sibling button
+					.removeAttr('disabled')// remove disabled if it has one.
+					.end() // end so you can use the DOM this element again. If not you won't be able to access it to do the next function.
+				.attr('disabled', 'disabled')// grabs the this funtcion and disables the attribute or button.
+			});// refractored the code so it's formatted better
+})();
+
+</script>
 
 </body>
 </html>
