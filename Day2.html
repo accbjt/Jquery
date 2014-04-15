@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Tutorial</title>
+
+	<style>
+		.emphasis{ font-weight: bold;}
+
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">//using google cdn make sure you have a http in the front so it links to it online</script>
+	
+	<script>
+	/*
+	$(document).ready(function(){ 
+		//$('li:first-child').addClass('emphasis'); //get first li tag add a class of emphasis to it.
+	}); // the document ready function so that it waits for you to load the document first before executing. if script is before the actually html. Recommended using this one because it's more readible.
+	*/
+
+	$(function(){
+		$('li:first-child').addClass('emphasis');
+	}) // same as the ready function above without the (document)ready statement. when you use an ananymous function makes it a document ready function.
+
+	</script>
+
+</head>
+<body>
+
+	<ul>
+		<li>Hello</li>
+		<li>Hello2</li>
+		<li>Hello3</li>
+		<li>donkey</li>
+		<li>kong</li>
+	</ul>
+
+</body>
+</html>
