@@ -5,6 +5,9 @@
 	<title>Jquery Tutorial</title>
 	<style>
 		ul li { color: red;}
+
+		.emphasis {color:green;}
+
 	</style>
 </head>
 <body>
@@ -13,15 +16,17 @@
 		<li>Hello</li>
 		<li>Hello2</li>
 		<li>Hello3</li>
-		<li></li>
-		<li></li>
+		<li>donkey</li>
+		<li>kong</li>
 	</ul>
 
 	<script src="js/jquery-1.11.0.js"></script>
 	
 	<script>
-		var lis = $('ul li');
-		console.log(lis);
+		// $('ul li').css('color','green'); function + get every (ul li) element. (.css) Grab the css ('color', 'green')then change the property to color green.
+		 
+		$('ul li').addClass('emphasis');
+
 	</script>
 
 </body>
