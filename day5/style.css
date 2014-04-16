@@ -29,3 +29,7 @@ dt {
 dt:first-child{border-top: none; }
 /*calling the last child and going back 2*/
 dt:last-child(2){border-bottom: none; }
+
+.hide{
+    display: none;
+}

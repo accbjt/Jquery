@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Day6 Appending</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<article>
+    <h1>My Post</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, atque beatae, blanditiis
+        corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="co">Animi, atque beatae, blanditiis</span>
+        corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?corporis culpa facilis impedit magnam officia officiis, perferendis quam quibusdam reprehenderit
+        suscipit? Maxime nemo quas repudiandae totam voluptates?
+    </p>
+
+</article>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+
+//    (function(){
+//        $('article').append('Hello to JavaScript')// append it to put something in the dom as a element.
+//                                                     This add to the bottom of the html doc.
+//    })();
+
+//    (function(){
+//        $('article').prepend('Hello to JavaScript')// prepend puts it at the top of the page
+//    })();
+
+//    (function(){
+//        $('h1').after('Hello to JavaScript');// puts it after the h1 tag
+//    })();
+
+//    (function(){
+//        $('p').first().before('Hello to JavaScript');// take the first p tag and put the words before it.
+//    })();
+
+//    (function(){
+//
+//        $('<h2>Hi Javascript</h2>').appendTo('article');// putting this to the article element. this is not the best way
+//                                                        // to do this. Don't mix too many html script with javascript.
+//
+//    })();
+
+//    (function(){
+//
+//        $('<h2></h2>', { //add a h2 tag
+//                text: 'Hello from Javascript', // add text to h2
+//                class: 'myClass'// add class to h2
+//        })
+//                .appendTo('article');// append to article
+//
+//    })();
+
+//        (function(){
+//
+//        $('<h2></h2>', { //add a h2 tag
+//                text: 'Hello from Javascript', // add text to h2
+//                class: 'myClass'// add class to h2
+//        })
+//                .insertAfter('h1');// insertAfter if your creating an element. Use After when you are grabbing an element
+//
+//    })();
+
+//        (function(){
+//
+//        $('<h2></h2>', { //add a h2 tag
+//                text: 'Hello from Javascript', // add text to h2
+//                class: 'myClass'// add class to h2
+//        })
+//                .insertBefore('p:nth-child(3)');// insert before the 3rd p tag
+//
+//    })();
+
+    (function(){
+
+////        $('h1').appendTo('article');// append to something that exists moves the actual object.
+
+//        $('p').after($('h1'));// get h1 and append after p. This doesn't work because you need to be specific. what
+                                // happen is it will appen twice because we have 2 p elements
+
+//        $('p').eq(0).after($('h1'));//this is more specific. get first p child and append h1.
+
+//        $('p').eq(0).after(function(){
+//            return $(this).prev();//we are returning this(p) and the previous element which is (h1) so we are returning h1.
+//        });
+
+//        $('p').eq(0).after(function(){
+//            return $(this).prev();//we are returning this(p) and the previous element which is (h1) so we are returning h1.
+//        });
+
+//            var co = $('span.co').each(function() {// gets the span class= co element
+//                $(this).closest('p').prepend('HI THERE');//prepend to the closest p tag and puts it in the beginning
+//            });
+//
+//            var ca = $('span.co').each(function() {// gets the span class= co element
+//            $(this).closest('p').append('HI THERE');// append to the closest p tag and puts it in the end
+//            });
+
+//        var co = $('span.co').each(function() {
+//
+//            var $this = $(this)
+//
+//            $('<blockquote></blockquote>', {
+//                class: 'co',
+//                text: $this.text()
+//            }).prependTo( $this.closest('p') );
+//
+//        });// takes the span co element  and appends to the closest p and sets the text inside of the span.co to the blockquote.
+
+        var co = $('article').find('span.co').each(function() {// for a more efficient way get the article then find the span.co in the article.
+
+            var $this = $(this)
+
+            $('<blockquote></blockquote>', {
+                class: 'co',
+                text: $this.text()
+            }).prependTo( $this.closest('p') );
+
+        });
+
+    })();
+
+</script>
+
+</body>
+</html>

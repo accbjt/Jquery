@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Day5</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<dl>		<!-- Definition List -->
+	<dt>What are your hours</dt>
+	<dd>We are open 24/7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24/7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24/7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24/7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24/7</dd>
+</dl>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+
+    (function(){
+
+//        var dd = $('dd');// calling the dd object
+
+////      dd.hide();//hide dd objects
+//        dd.filter(':nth-child(n+4)').addClass('hide');//goes to the 4th element and everything past that and hides
+//
+//        // when mouse hovers above the object the it will go to the next element and show it. which is the dd element
+//        $('dt').on('mouseenter', function(){
+//            $(this).next().show();
+//        })
+
+//        dd.filter(':nth-child(n+4)').addClass('hide');//goes to the 4th element and everything past that and hides
+//
+//
+//        $('dt').on('mouseenter', function(){
+//            $(this).next().siblings('dd').hide();// hide all siblings of dd
+//            $(this).next().show();// show the dd that hovered over
+//        })
+
+//        dd.filter(':nth-child(n+4)').addClass('hide');
+//
+//
+//        $('dt').on('mouseenter', function(){// refractored the code above so that it doesn't repeat yourself.
+//            $(this)
+//                  .next()
+//                    .show()
+//                    .siblings('dd')
+//                        .hide();
+
+//          dd.filter(':nth-child(n+4)').addClass('hide');
+//
+//
+//          $('dt').on('mouseenter', function(){// refractored the code above so that it doesn't repeat yourself.
+//               $(this)
+//                        .next()
+//                        .show()
+//                        .siblings('dd')
+//                        .slideUp(300);// changed to get a slide up effect 300 is mseconds
+//
+//
+//        })
+
+//        dd.filter(':nth-child(n+4)').addClass('hide');
+//
+//
+//        $('dt').on('mouseenter', function(){// refractored the code above so that it doesn't repeat yourself.
+//            $(this)
+//                    .next()
+//                    .slideDown(200)//added slide down effect
+//                    .siblings('dd')
+//                    .slideUp(200);// changed to get a slide up effect 300 is mseconds
+//
+//
+//        })
+
+        $('dd').filter(':nth-child(n+4)').addClass('hide');//change to $('dd') because we only use it once.
+
+
+        $('dl').on('mouseenter', 'dt', function(){// change to use the parent element to add event listener. Looking for dt and only run the function if it's a dt element.
+            $(this)
+                    .next()
+                    .slideDown(200)//added slide down effect
+                    .siblings('dd')
+                    .slideUp(200);// changed to get a slide up effect 300 is mseconds
+
+
+        })
+
+    })();
+
+</script>
+
+</body>
+</html>
