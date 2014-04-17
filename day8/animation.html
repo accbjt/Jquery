@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>This Jquery Tut</title>
+
+	<style>
+
+	.box0 {
+		width: 400px;
+		background: rgb(139, 169, 206);
+		padding: 2em;
+		position: relative;
+	}
+
+	.box1 {
+	width: 400px;
+	background: rgb(139, 169, 206);
+	padding: 2em;
+	position: relative;
+	}
+
+	.box2 {
+	width: 400px;
+	background: rgb(139, 169, 206);
+	padding: 2em;
+	position: relative;
+	}
+
+	.box3 {
+	width: 400px;
+	background: rgb(139, 169, 206);
+	padding: 2em;
+	position: relative;
+	}
+
+	</style>
+</head>
+<body>
+<!-- First Box button -->
+<h1>Jquery Animations</h1>
+
+<div class="box0">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+<p class= 'button0'><button>Increase</button></p>
+
+<!-- second box button -->
+<div class="box1">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+<p class= 'button1'><button>Increase</button></p>
+
+<!-- Third Box Animation -->
+<div class="box2">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+<p class= 'button2'><button>Increase</button></p>
+
+<!-- 4 box -->
+
+<div class="box3">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+
+<p class= 'button3'><button>Increase</button></p>
+
+<!--  5 box -->
+<script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+
+
+////////////////////  first box click increase  /////////////
+//Get element for button
+	$('p.button0').on('click', function () {
+// when clicked increase css text size
+		$('div.box0').css('font-size', '+=5');// =+5 increasews bu 5 everytime you slick on it
+	});
+
+/////////////////// box1 click with css ////////////////
+
+	$('p.button1').on('click', function () {
+//put the css in as an object array using {} after css
+		$('div.box1').css({
+			'font-size': '+=5',
+			'color' : 'white'
+
+		});
+	});
+
+////////////////Animate//////////////////////////////
+
+	$('p.button2').on('click', function () {
+//put the css in as an object array using {} after css
+		$('div.box2').animate({
+			'font-size': '+=5', // make sure no spaces in +=5
+			'width': '+=300'
+			//'color' : 'white' animate doesn't go from one color to another
+
+		}, 2000, 'linear');// the 2000 is the time it will animate
+						// swing and linear is easing. linear is constant speed and swing slow then fast.
+	});
+
+////////////////Animate//////////////////////////////
+
+	$('p.button3').on('click', function () {
+//put the css in as an object array using {} after css
+		$('div.box3')
+			.animate({
+				'font-size': '+=5' 
+			}, { duration: 500 })
+			.animate({'font-size' :'-=10'}, 500)
+
+});
+</script>
+
+</body>
+</html>
