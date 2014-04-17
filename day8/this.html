@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>This Jquery Tut</title>
+</head>
+<body>
+
+<h1>Click Me</h1>
+
+<div class="content">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, nam, distinctio, obcaecati officiis magni qui enim aspernatur sint cum amet fuga maiores reiciendis molestias velit quasi aperiam ex? Fugiat, expedita.
+	</p>
+
+</div>
+
+<script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+<script>
+
+jQuery.fn.flash = function( speed, easing, callback ) {
+		$(this).slideDown(500, function () {
+			console.log('hi there')
+		});
+		// return this.animate( props, speed, easing, callback );
+	};
+
+$('div.content').hide();
+
+$('h1').on('click', function () {
+	$(this).next('div.content').flash();
+})
+
+</script>
+
+</body>
+</html>
