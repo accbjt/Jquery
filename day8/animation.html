@@ -120,15 +120,30 @@
 
 ////////////////Animate//////////////////////////////
 
+(function(){
+
+
 	$('p.button3').on('click', function () {
 //put the css in as an object array using {} after css
 		$('div.box3')
 			.animate({
-				'font-size': '+=5' 
+				'font-size': '+=5',
+				'width': '+=300'
 			}, { duration: 500 })
-			.animate({'font-size' :'-=10'}, 500)
+			.animate({
+				'font-size' :'-=5',
+				'width': '-= 300'
+			}, 1000, function(){
+				$(this).css('background', 'rgb(157, 160, 163)'), 500
+			})
+
 
 });
+
+}());
+
+
+
 </script>
 
 </body>
