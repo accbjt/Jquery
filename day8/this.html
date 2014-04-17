@@ -3,6 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>This Jquery Tut</title>
+
+	<style>
+
+	p{ margin-top: 0}
+
+	</style>
 </head>
 <body>
 
@@ -25,7 +31,10 @@
 
 jQuery.fn.flash = function( speed, easing, callback ) {
 		$(this).slideDown(500, function () {
-			console.log('hi there')
+			$(this).delay(2000).slideUp(500, function () {
+				console.log ("done sliding")
+			});
+
 		});
 		// return this.animate( props, speed, easing, callback );
 	};
