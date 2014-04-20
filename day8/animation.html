@@ -34,6 +34,20 @@
 	position: relative;
 	}
 
+	.box4 {
+	width: 400px;
+	background: rgb(139, 169, 206);
+	padding: 2em;
+	position: relative;
+	}
+
+	.box5 {
+	width: 400px;
+	background: rgb(139, 169, 206);
+	padding: 2em;
+	position: relative;
+	}
+
 	</style>
 </head>
 <body>
@@ -82,6 +96,31 @@
 <p class= 'button3'><button>Increase</button></p>
 
 <!--  5 box -->
+<div class="box4">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+
+<p class= 'button4'><button>Increase</button></p>
+
+<script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!--  6 box -->
+<div class="box5">
+	
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, nostrum, sed, inventore impedit laborum esse voluptatem earum odit minima consectetur itaque unde hic temporibus cum quo! Sapiente laudantium deleniti temporibus.
+	</p>
+
+</div>
+
+<p class= 'button5'><button>Center</button></p>
+
+<!-- script -->
+
 <script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 <script>
@@ -140,10 +179,40 @@
 
 });
 
+
 }());
 
+(function(){
 
 
+	$('p.button4').on('click', function () {
+//put the css in as an object array using {} after css
+		$('div.box4')
+			.animate({
+				'font-size': '+=5',
+			}, { duration: 500 })
+			.animate({ 'top': 500}, {3000, queue: false});// if queue is set to false it won't pause between animations.
+
+
+});
+	
+
+}());
+
+(function(){
+	var winWidth = $(window).width()/2 - box.width()/2 ,
+		box = $('div.box6')
+
+	$('p.button5').on('click', function () {
+//put the css in as an object array using {} after css
+		box.css('left', winWidth);
+		
+
+
+});
+	
+
+}());
 </script>
 
 </body>
