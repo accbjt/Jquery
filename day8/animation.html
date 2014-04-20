@@ -46,6 +46,12 @@
 	background: rgb(139, 169, 206);
 	padding: 2em;
 	position: relative;
+	/*web kit is for making the radius speed slower*/
+	-webkit-transition: border-radius 3s;
+	}
+	
+	.rounded{
+		border-radius: 50px;
 	}
 
 	</style>
@@ -187,12 +193,11 @@
 
 	$('p.button4').on('click', function () {
 //put the css in as an object array using {} after css
-		$('div.box4')
-			.animate({
-				'font-size': '+=5',
+	$('div.box4')
+			    .animate({
+				'font-size': '+=5'
 			}, { duration: 500 })
-			.animate({ 'top': 500}, {3000, queue: false});// if queue is set to false it won't pause between animations.
-
+			    .animate({'top': 500},{duration: 3000, queue: false});// if queue is set to false it won't pause between animations.
 
 });
 	
@@ -200,16 +205,22 @@
 }());
 
 (function(){
-	var winWidth = $(window).width()/2 - box.width()/2 ,
-		box = $('div.box6')
+	    var box = $('div.box5'),
+	w = $(window).width()/2 - box.outerWidth()/2,
+	h = $(window).height()/2 - box.outerHeight()/2;
+		
 
 	$('p.button5').on('click', function () {
 //put the css in as an object array using {} after css
-		box.css('left', winWidth);
-		
-
-
-});
+		box.animate({
+			'left': w,
+			'position': 'absolute'
+		})
+		.animate({
+			'top' : h
+		}, 2000),
+		box.addClass('rounded');
+})
 	
 
 }());
